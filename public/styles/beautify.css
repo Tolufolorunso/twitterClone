@@ -16,6 +16,15 @@
   /* border: 1px solid red; */
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Poppins", sans-serif;
+}
+
 h1 {
   margin: 0;
   padding: 0;
@@ -45,6 +54,7 @@ html:focus-within {
 }
 
 ::-webkit-scrollbar-thumb {
+  background: #1da1f2;
   border-radius: 16px;
   box-shadow: inset 2px 2px 2px hsla(0deg, 0%, 100%, 0.25), inset -2px -2px 2px rgba(0, 0, 0, 0.25);
 }
@@ -66,6 +76,9 @@ body {
 body {
   text-rendering: optimizeSpeed;
   line-height: 1.5;
+  font-size: 1.5rem;
+  font-weight: 400;
+  font-family: "Noto Sans", sans-serif;
   background-color: #1da1f2;
 }
 
@@ -111,6 +124,11 @@ svg {
   border: 0;
 }
 
+.container {
+  width: min(1350px, 100% - 1rem);
+  margin-inline: auto;
+}
+
 .auth {
   background-color: #000;
   height: 100%;
@@ -141,7 +159,7 @@ svg {
 }
 
 .footer {
-  padding: 2rem 0;
+  padding: 1rem 0;
   color: #fff;
 }
 
