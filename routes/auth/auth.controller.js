@@ -1,3 +1,9 @@
+const landingPage = (req, res) => {
+  res.status(200).render('auth/landing', {
+    pageTitle: 'Tweeter. It’s what’s happening / Tweeter',
+  });
+};
+
 const login = (req, res, next) => {
   console.log('hello');
   const payload = {
@@ -23,6 +29,7 @@ const registerPost = (req, res, next) => {
 };
 
 module.exports = {
+  landingPage,
   login,
   register,
   registerPost,

@@ -1,0 +1,36 @@
+.auth {
+  background-color: $clrBlack;
+  height: 100%;
+  color: $clrWhite;
+  display: flex;
+  flex-direction: column;
+}
+
+.landing {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.landing__left {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url(/images/landing-bg.png);
+  display: grid;
+  place-items: center;
+
+  &--image-wrapper {
+    width: 302px;
+    height: 246px;
+
+    img {
+      width: 100%;
+      object-fit: cover;
+      display: inline-block;
+    }
+  }
+}
+
+.footer {
+  padding: 2rem 0;
+  color: $clrWhite;
+}
