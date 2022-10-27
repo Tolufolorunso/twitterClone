@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node app.js",
     "dev": "nodemon app.js",
-    "scss-watch": "sass --watch sass/main.scss public/styles/beautify.css"
+    "scss-watch": "sass --no-source-map --watch --style=compressed sass/main.scss public/styles/beautify.css"
   },
   "author": "Folorunso Tolulope",
   "license": "ISC",

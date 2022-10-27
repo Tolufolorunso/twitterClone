@@ -1,5 +1,6 @@
 @import './global/variables';
 @import './global/globalStyles';
-@import './configure';
+@import './global/utilities';
+@import './global/configure';
 
-@import './auth';
+@import './pages/auth';
