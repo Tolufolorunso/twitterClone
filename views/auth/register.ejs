@@ -1,3 +1,26 @@
 <%- include('../layouts/authHeader.ejs') -%>
-<main class="register">register</main>
+<main class="register">
+
+  <form class="form">
+    <div class="form__group">
+      <input type="text" name="firstname">
+    </div>
+    <div class="form__group">
+      <input type="text" name="lastname">
+    </div>
+    <div class="form__group">
+      <input type="text" name="username">
+    </div>
+    <div class="form__group">
+      <input type="email" name="email">
+    </div>
+    <div class="form__group">
+      <input type="password" name="password">
+    </div>
+    <div class="form__group">
+      <input type="password" name="confirm-password">
+    </div>
+    <button type="submit">register</button>
+  </form>
+</main>
 <%- include('../layouts/authFooter.ejs') -%>

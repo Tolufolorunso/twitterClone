@@ -1,5 +1,4 @@
 .auth {
-  background-color: $clrBlack;
   height: 100%;
   color: $clrWhite;
   display: flex;
@@ -7,6 +6,7 @@
 }
 
 .landing {
+  background-color: $clrBlack;
   flex: 1;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -28,6 +28,19 @@
       display: inline-block;
     }
   }
+}
+
+.login,
+.register {
+  flex: 1;
+}
+
+.form {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: $border-1;
 }
 
 .footer {

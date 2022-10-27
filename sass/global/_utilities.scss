@@ -2,3 +2,27 @@
   width: min(1350px, 100% - 1rem);
   margin-inline: auto;
 }
+
+$spacing: (1, 2, 3, 4, 5, 6, 7);
+
+@each $space in $spacing {
+  .m-#{$space} {
+    margin: #{$space}rem;
+  }
+  .my-#{$space} {
+    margin-block: #{$space}rem;
+  }
+  .mx-#{$space} {
+    margin-inline: #{$space}rem;
+  }
+
+  .p-#{$space} {
+    padding: #{$space}rem;
+  }
+  .py-#{$space} {
+    padding-block: #{$space}rem;
+  }
+  .px-#{$space} {
+    padding-inline: #{$space}rem;
+  }
+}

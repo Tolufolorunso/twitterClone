@@ -1,3 +1,15 @@
 <%- include('../layouts/authHeader') -%>
-<main class="login">login</main>
+<main class="login">
+  <div class="container">
+    <form class="form p-4">
+      <div class="form__group">
+        <input type="text" name="username">
+      </div>
+      <div class="form__group">
+        <input type="password" name="password">
+      </div>
+      <button type="submit">Login</button>
+    </form>
+  </div>
+</main>
 <%- include('../layouts/authFooter') -%>
