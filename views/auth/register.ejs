@@ -1,26 +1,28 @@
 <%- include('../layouts/authHeader.ejs') -%>
 <main class="register">
 
-  <form class="form">
+  <form class="form" method="post" action="">
+    <p style="color: black"><%= error %></p>
     <div class="form__group">
-      <input type="text" name="firstname">
+      <input type="text" name="firstname" placeholder="firstname" value=<%= firstname %>>
     </div>
     <div class="form__group">
-      <input type="text" name="lastname">
+      <input type="text" name="lastname" placeholder="lastname" value=<%= lastname %>>
     </div>
     <div class="form__group">
-      <input type="text" name="username">
+      <input type="text" name="username" placeholder="username" value=<%= username %>>
     </div>
     <div class="form__group">
-      <input type="email" name="email">
+      <input type="email" name="email" placeholder="email" value=<%= email %>>
     </div>
     <div class="form__group">
-      <input type="password" name="password">
+      <input type="password" name="password" placeholder="*******">
     </div>
     <div class="form__group">
-      <input type="password" name="confirm-password">
+      <input type="password" name="confirmPassword" placeholder="confirm passwrod">
     </div>
     <button type="submit">register</button>
   </form>
 </main>
+<script src="/static/script/register.js"></script>
 <%- include('../layouts/authFooter.ejs') -%>
