@@ -7,53 +7,90 @@
     </a>
     <p class="form__title">Join Twitter today</p>
     <p style="color: black"><%= error %></p>
-    <div class="form__group">
-      <label for="firstname">
-        <span class="material-symbols-outlined">
-          person
+    <div class="handle-form">
+      <div class="form__group">
+        <label for="firstname">
+          <span class="material-symbols-outlined">
+            person
+          </span>
+        </label>
+        <input type="text" name="firstname" id="firstname" placeholder="Enter firstname" class="form__group--input" value="<%= firstname %>" required />
+        <span class="material-symbols-outlined marked">
+          check_circle
         </span>
-      </label>
-      <input type="text" name="firstname" id="firstname" placeholder="Enter firstname" class="form__group--input" value="<%= firstname %>" required />
+      </div>
+      <p>errorMsg goes here</p>
     </div>
-    <div class="form__group">
-      <label for="lastname">
-        <span class="material-symbols-outlined">
-          person
+
+    <div class="handle-form">
+      <div class="form__group">
+        <label for="lastname">
+          <span class="material-symbols-outlined">
+            person
+          </span>
+        </label>
+        <input type="text" name="lastname" id="lastname" placeholder="Enter lastname" class="form__group--input" value="<%= lastname %>" required>
+        <span class="material-symbols-outlined marked">
+          check_circle
         </span>
-      </label>
-      <input type="text" name="lastname" id="lastname" placeholder="Enter lastname" class="form__group--input" value="<%= lastname %>" required>
+      </div>
+      <p>errorMsg goes here</p>
     </div>
-    <div class="form__group">
-      <label for="username">
-        <span class="material-symbols-outlined">
-          person
+    <div class="handle-form">
+      <div class="form__group">
+        <label for="username">
+          <span class="material-symbols-outlined">
+            person_2
+          </span>
+        </label>
+        <input type="text" name="username" id="username" placeholder="Enter username" class="form__group--input" value="<%= username %>" required>
+        <span class="material-symbols-outlined marked">
+          check_circle
         </span>
-      </label>
-      <input type="text" name="username" id="username" placeholder="Enter username" class="form__group--input" value="<%= username %>" required>
+      </div>
+      <p>errorMsg goes here</p>
     </div>
-    <div class="form__group">
-      <label for="email">
-        <span class="material-symbols-outlined">
-          person
+    <div class="handle-form">
+      <div class="form__group">
+        <label for="email">
+          <span class="material-symbols-outlined">
+            alternate_email
+          </span>
+        </label>
+        <input type="email" name="email" id="email" placeholder="Enter email" class="form__group--input" value="<%= email %>" required>
+        <span class="material-symbols-outlined marked">
+          check_circle
         </span>
-      </label>
-      <input type="email" name="email" id="email" placeholder="Enter email" class="form__group--input" value="<%= email %>" required>
+      </div>
+      <p>errorMsg goes here</p>
     </div>
-    <div class="form__group">
-      <label for="password">
-        <span class="material-symbols-outlined">
-          lock
+    <div class="handle-form">
+      <div class="form__group">
+        <label for="password">
+          <span class="material-symbols-outlined">
+            lock
+          </span>
+        </label>
+        <input type="password" name="password" id="password" class="form__group--input" placeholder="Enter you password" autocomplete="off" required>
+        <span class="material-symbols-outlined marked">
+          check_circle
         </span>
-      </label>
-      <input type="password" name="password" id="password" class="form__group--input" placeholder="Enter you password" autocomplete="off" required>
+      </div>
+      <p>errorMsg goes here</p>
     </div>
-    <div class="form__group">
-      <label for="confirmPassword">
-        <span class="material-symbols-outlined">
-          lock
+    <div class="handle-form">
+      <div class="form__group">
+        <label for="confirmPassword">
+          <span class="material-symbols-outlined">
+            lock
+          </span>
+        </label>
+        <input type="password" name="confirmPassword" placeholder="confirm passwrod" id="confirmPassword" class="form__group--input" autocomplete="off" placeholder="Confirm your password" autocomplete="off" required>
+        <span class="material-symbols-outlined marked">
+          check_circle
         </span>
-      </label>
-      <input type="password" name="confirmPassword" placeholder="confirm passwrod" id="confirmPassword" class="form__group--input" autocomplete="off" placeholder="Confirm your password" autocomplete="off" required>
+      </div>
+      <p>errorMsg goes here</p>
     </div>
     <button type="submit" class="btn | register-btn not-allowed">register</button>
     <div class="social-icons">
@@ -68,5 +105,7 @@
     </div>
   </form>
 </main>
+<script src="/static/script/contants.js"></script>
+<script src="/static/script/validateInput.js"></script>
 <script src="/static/script/register.js"></script>
 <%- include('../layouts/authFooter.ejs') -%>

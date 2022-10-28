@@ -21,6 +21,11 @@
     border: $border-1;
     border-radius: 0.8rem;
 
+    &.valid {
+      // border: $border-1;
+      border-color: $clrPrimary;
+    }
+
     label {
       padding-left: 1.1rem;
     }
@@ -112,4 +117,19 @@
       padding-inline: 0.7rem;
     }
   }
+}
+
+.marked {
+  color: $clrPrimary;
+  display: none;
+}
+
+.error {
+  border: $border-1;
+  border-color: red;
+  color: red;
+}
+
+.form__group.error p {
+  visibility: visible;
 }

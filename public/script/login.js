@@ -14,19 +14,6 @@ const loginUser = () => {
   }
 };
 
-const validateUser = (value) => {
-  if (!value) {
-    return false;
-  }
-  return true;
-};
-const validatePassword = (value) => {
-  if (!value) {
-    return false;
-  }
-  return true;
-};
-
 const validateInputs = (event) => {
   if (event.target.name === 'logUser') {
     isLogUserValid = validateUser(event.target.value);

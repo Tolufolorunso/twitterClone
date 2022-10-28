@@ -108,6 +108,16 @@ img {
   color: $clrWhite;
 }
 
+.handle-form {
+  p {
+    text-align: left;
+    font-size: 1rem;
+    font-weight: 300;
+    visibility: hidden;
+    color: red;
+  }
+}
+
 @import '../global/form';
 
 @media (max-width: 37rem) {
