@@ -1,3 +1,9 @@
+img {
+  max-width: 100%;
+  display: inline-block;
+  object-fit: cover;
+}
+
 .auth {
   height: 100%;
   color: $clrWhite;
@@ -30,9 +36,71 @@
   }
 }
 
+.landing__right {
+  width: min-content;
+
+  &--logo {
+    width: 76px;
+    height: 62px;
+  }
+
+  h1,
+  h2,
+  .btn {
+    white-space: nowrap;
+  }
+
+  h1 {
+    font-size: clamp(2rem, 3vw, 5.4rem);
+    font-weight: 700;
+  }
+
+  h2 {
+    font-size: clamp(1.8rem, 2vw, 2.1rem);
+    font-weight: 700;
+    margin-bottom: 2.1rem;
+  }
+
+  .social-login-btns {
+    gap: 1.2rem;
+  }
+
+  .or {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3px;
+    font-size: $fs-1;
+    color: #ebe7e7;
+    margin-block: 1.6rem;
+  }
+
+  .or::before,
+  .or::after {
+    content: '';
+    height: 1px;
+    background-color: #e3dddd54;
+    display: block;
+    flex: 1;
+    border-radius: 70%;
+  }
+
+  .login-btn {
+    margin-top: 4rem;
+    gap: 1.8rem;
+  }
+
+  small {
+    font-size: 1.1rem;
+    font-weight: 300;
+  }
+}
+
 .login,
 .register {
   flex: 1;
+  color: $clrBlack;
 }
 
 .form {
@@ -41,6 +109,21 @@
   left: 50%;
   transform: translate(-50%, -50%);
   border: $border-1;
+
+  &__group {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .login-btn,
+  .register-btn {
+    cursor: pointer;
+  }
+
+  .not-allowed {
+    cursor: not-allowed;
+    background-color: #ccc;
+  }
 }
 
 .footer {

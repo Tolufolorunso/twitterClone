@@ -83,6 +83,7 @@ body {
   font-weight: 400;
   font-family: $ff-body;
   background-color: $clrWhite;
+  color: $clrBlack;
 }
 
 /* A elements that don't have a class get default styles */
@@ -127,4 +128,8 @@ svg {
   clip: rect(0, 0, 0, 0);
   white-space: nowrap; /* added line */
   border: 0;
+}
+
+a {
+  text-decoration: none;
 }

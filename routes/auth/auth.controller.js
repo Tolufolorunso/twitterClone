@@ -11,7 +11,7 @@ const landingPage = (req, res) => {
 const login = (req, res, next) => {
   console.log('hello');
   const payload = {
-    pageTitle: 'Welcome Home',
+    pageTitle: 'Login | Page',
   };
   res.status(200).render('auth/login', payload);
 };
@@ -78,7 +78,7 @@ const registerPost = async (req, res, next) => {
 
 const loginPost = async (req, res, next) => {
   const { logUser, password } = req.body;
-
+  console.log(logUser, password);
   if (!logUser || !password) {
     return res.status(StatusCodes.BAD_REQUEST).render('auth/login', {
       pageTitle: 'register page',

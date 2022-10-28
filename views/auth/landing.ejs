@@ -2,12 +2,29 @@
 <main class="landing">
   <div class="landing__left">
     <p class="landing__left--image-wrapper">
-      <img src="/static/images/logo-large.png" alt="tweeter logo">
+      <img src="/static/images/logo-large.png" alt="tweeter logo large">
     </p>
   </div>
-  <div class="landing__right">
-    <a href="/auth/login">Login</a>
-    <a href="/auth/register">Register</a>
+  <div class="landing__right flex flex-col px-3">
+    <p class="landing__right--logo py-5"><img src="/static/images/logo-small.png" alt="tweeter logo small"></p>
+    <h1 class="py-5">Happening now</h1>
+    <div class="landing__right-content">
+      <h2>Join Tweeter Today</h2>
+      <div class="social-login-btns flex flex-col">
+        <button class="btn">Sign up with Google</button>
+        <button class="btn">Sign up with Apple</button>
+      </div>
+      <span class="or">or</span>
+      <div class="register-btn flex flex-col">
+        <a href="/auth/register" class="btn">Sign up with phone or email</a>
+        <small>By signing up, you agree to the Terms of Service and Privacy Policy, including Cookie Use.</small>
+      </div>
+    </div>
+    <div class="login-btn flex flex-col">
+      <p>Already have an account?</p>
+      <a href="/auth/login" class="btn">Login</a>
+    </div>
+
   </div>
 </main>
 <%- include('../layouts/authFooter.ejs') -%>

@@ -3,13 +3,17 @@
   <div class="container">
     <form class="form p-4" method="post">
       <div class="form__group">
-        <input type="text" name="logUser">
+        <label for="loguser">Username/Email/Phone</label>
+        <input type="text" name="logUser" id="loguser" placeholder="Login with email or phone or username" class="form__group--input" required>
       </div>
       <div class="form__group">
-        <input type="password" name="password">
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password" class="form__group--input" autocomplete="off" required>
       </div>
-      <button type="submit">Login</button>
+      <button type="submit" class="btn | login-btn not-allowed" disabled>Login</button>
     </form>
   </div>
 </main>
+<script src="/static/script/contants.js"></script>
+<script src="/static/script/login.js"></script>
 <%- include('../layouts/authFooter') -%>
