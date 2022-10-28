@@ -103,30 +103,16 @@ img {
   color: $clrBlack;
 }
 
-.form {
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  border: $border-1;
-
-  &__group {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .login-btn,
-  .register-btn {
-    cursor: pointer;
-  }
-
-  .not-allowed {
-    cursor: not-allowed;
-    background-color: #ccc;
-  }
-}
-
 .footer {
   padding: 1rem 0;
   color: $clrWhite;
+}
+
+@import '../global/form';
+
+@media (max-width: 37rem) {
+  .login,
+  .register {
+    padding-inline: 1rem;
+  }
 }

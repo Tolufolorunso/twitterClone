@@ -1,0 +1,91 @@
+.form {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: $border-1;
+  width: min(400px, 100% - 1rem);
+  border-radius: 1.4rem;
+  gap: 1rem;
+  text-align: center;
+
+  &__group {
+    display: flex;
+    align-items: center;
+    border: $border-1;
+    border-radius: 0.8rem;
+
+    label {
+      padding-left: 1.1rem;
+    }
+
+    &--input {
+      border: none;
+      outline: none;
+      padding: 1.1rem;
+      flex: 1;
+      border-radius: 0.8rem;
+      width: 100%;
+    }
+
+    ::placeholder {
+      font-size: clamp(0.8rem, 2vw, 1.2rem);
+    }
+  }
+
+  .login-btn,
+  .register-btn {
+    cursor: pointer;
+    border-radius: 0.8rem;
+    background-color: $clrPrimary;
+  }
+
+  .not-allowed {
+    cursor: not-allowed;
+    background-color: #ccc;
+  }
+
+  .social-icons {
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+    margin-top: 2rem;
+
+    small {
+      font-size: 1.1rem;
+      font-weight: 400;
+      letter-spacing: -0.035em;
+      color: #828282;
+
+      a {
+        color: $clrPrimary;
+      }
+    }
+  }
+
+  &__logo {
+    width: 7.5rem;
+    height: 7.5rem;
+
+    img {
+      width: 100%;
+      background-color: $clrPrimary;
+    }
+  }
+}
+
+@media (max-width: 37rem) {
+  .form {
+    // border: none;
+    // width: 100%;
+    padding-inline: 0.7rem;
+
+    label {
+      padding-left: 0.7rem;
+    }
+
+    input {
+      padding-inline: 0.7rem;
+    }
+  }
+}

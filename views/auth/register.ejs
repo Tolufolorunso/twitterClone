@@ -1,27 +1,67 @@
 <%- include('../layouts/authHeader.ejs') -%>
 <main class="register">
 
-  <form class="form" method="post" action="">
+  <form class="form p-2 flex flex-col" method="post">
+    <a href="/" class="form__logo">
+      <img src="/static/images/logo-small.png" alt="tweeter logo small">
+    </a>
     <p style="color: black"><%= error %></p>
     <div class="form__group">
-      <input type="text" name="firstname" placeholder="firstname" value=<%= firstname %>>
+      <label for="firstname">
+        <span class="material-symbols-outlined">
+          person
+        </span>
+      </label>
+      <input type="text" name="firstname" id="firstname" placeholder="Enter firstname" class="form__group--input" value="<%= firstname %>" required />
     </div>
     <div class="form__group">
-      <input type="text" name="lastname" placeholder="lastname" value=<%= lastname %>>
+      <label for="lastname">
+        <span class="material-symbols-outlined">
+          person
+        </span>
+      </label>
+      <input type="text" name="lastname" id="lastname" placeholder="Enter lastname" class="form__group--input" value="<%= lastname %>" required>
     </div>
     <div class="form__group">
-      <input type="text" name="username" placeholder="username" value=<%= username %>>
+      <label for="username">
+        <span class="material-symbols-outlined">
+          person
+        </span>
+      </label>
+      <input type="text" name="username" id="username" placeholder="Enter username" class="form__group--input" value="<%= username %>" required>
     </div>
     <div class="form__group">
-      <input type="email" name="email" placeholder="email" value=<%= email %>>
+      <label for="email">
+        <span class="material-symbols-outlined">
+          person
+        </span>
+      </label>
+      <input type="email" name="email" id="email" placeholder="Enter email" class="form__group--input" value="<%= email %>" required>
     </div>
     <div class="form__group">
-      <input type="password" name="password" placeholder="*******">
+      <label for="password">
+        <span class="material-symbols-outlined">
+          lock
+        </span>
+      </label>
+      <input type="password" name="password" id="password" class="form__group--input" placeholder="Enter you password" autocomplete="off" required>
     </div>
     <div class="form__group">
-      <input type="password" name="confirmPassword" placeholder="confirm passwrod">
+      <label for="confirmPassword">
+        <span class="material-symbols-outlined">
+          lock
+        </span>
+      </label>
+      <input type="password" name="confirmPassword" placeholder="confirm passwrod" id="confirmPassword" class="form__group--input" autocomplete="off" placeholder="Confirm your password" autocomplete="off" required>
     </div>
     <button type="submit" class="btn | register-btn not-allowed">register</button>
+    <div class="social-icons">
+      <small>or continue with these social profile</small>
+      <ul>
+        <li>face</li>
+      </ul>
+      <small>Already a member? <a href="/auth/login">Login</a></small>
+    </div>
   </form>
 </main>
 <script src="/static/script/register.js"></script>

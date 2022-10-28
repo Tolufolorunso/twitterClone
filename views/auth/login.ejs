@@ -1,16 +1,35 @@
 <%- include('../layouts/authHeader') -%>
 <main class="login">
   <div class="container">
-    <form class="form p-4" method="post">
+    <form class="form p-2 flex flex-col" method="post">
+      <a href="/" class="form__logo">
+        <img src="/static/images/logo-small.png" alt="tweeter logo small">
+      </a>
       <div class="form__group">
-        <label for="loguser">Username/Email/Phone</label>
+        <label for="loguser">
+          <span class="material-symbols-outlined">
+            person
+          </span>
+        </label>
         <input type="text" name="logUser" id="loguser" placeholder="Login with email or phone or username" class="form__group--input" required>
       </div>
       <div class="form__group">
-        <label for="password">Password</label>
-        <input type="password" name="password" id="password" class="form__group--input" autocomplete="off" required>
+        <label for="password">
+          <span class="material-symbols-outlined">
+            lock
+          </span>
+        </label>
+        <input type="password" name="password" id="password" class="form__group--input" placeholder="Enter you password" autocomplete="off" required>
       </div>
       <button type="submit" class="btn | login-btn not-allowed" disabled>Login</button>
+
+      <div class="social-icons">
+        <small>or continue with these social profile</small>
+        <ul>
+          <li>face</li>
+        </ul>
+        <small>Not a member? <a href="/auth/register">Register</a></small>
+      </div>
     </form>
   </div>
 </main>
