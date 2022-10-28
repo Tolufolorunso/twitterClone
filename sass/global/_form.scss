@@ -8,6 +8,12 @@
   border-radius: 1.4rem;
   gap: 1rem;
   text-align: center;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+
+  &__title {
+    font-size: clamp(1.6rem, 3vw, 4rem);
+    line-height: 1;
+  }
 
   &__group {
     display: flex;
@@ -29,7 +35,7 @@
     }
 
     ::placeholder {
-      font-size: clamp(0.8rem, 2vw, 1.2rem);
+      font-size: clamp(1.1rem, 2.5vw, 1.5rem);
     }
   }
 
@@ -61,15 +67,33 @@
         color: $clrPrimary;
       }
     }
+
+    ul {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+
+      li {
+        width: 4rem;
+        height: 4rem;
+        border: $border-1;
+        border-radius: 100%;
+
+        img {
+          // border-radius: 100%;
+          padding: 1rem;
+        }
+      }
+    }
   }
 
   &__logo {
-    width: 7.5rem;
-    height: 7.5rem;
+    width: 4rem;
+    height: 4rem;
 
     img {
       width: 100%;
-      background-color: $clrPrimary;
     }
   }
 }

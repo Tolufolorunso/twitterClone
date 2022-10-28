@@ -3,8 +3,9 @@
 
   <form class="form p-2 flex flex-col" method="post">
     <a href="/" class="form__logo">
-      <img src="/static/images/logo-small.png" alt="tweeter logo small">
+      <img src="/static/images/logo-blue.png" alt="tweeter logo small">
     </a>
+    <p class="form__title">Join Twitter today</p>
     <p style="color: black"><%= error %></p>
     <div class="form__group">
       <label for="firstname">
@@ -58,7 +59,10 @@
     <div class="social-icons">
       <small>or continue with these social profile</small>
       <ul>
-        <li>face</li>
+        <li><img src="/static/images/facebook.png" alt="facebook logo"></li>
+        <li><img src="/static/images/logo-blue.png" alt="twitter logo"></li>
+        <li><img src="/static/images/github.png" alt="github logo"></li>
+        <li><img src="/static/images/google.png" alt="google logo"></li>
       </ul>
       <small>Already a member? <a href="/auth/login">Login</a></small>
     </div>
