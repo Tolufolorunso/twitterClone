@@ -19,7 +19,12 @@ const login = (req, res, next) => {
 const register = (req, res, next) => {
   const payload = {
     pageTitle: 'Register | Page',
-    error: '',
+    errorMsg: '',
+    errorObj:{
+      phone: '',
+      email: '',
+      username: ''
+    },
     firstname: '',
     lastname: '',
     username: '',
@@ -31,11 +36,8 @@ const register = (req, res, next) => {
 };
 
 const registerPost = async (req, res, next) => {
-  const { firstname, lastname, username, email, password, confirmPassword } =
+  const { firstname, lastname, username, email, password, confirmPassword,phone } =
     req.body;
-
-  console.log('hello');
-  console.log(req.body);
   if (
     !firstname ||
     !lastname ||
@@ -46,7 +48,12 @@ const registerPost = async (req, res, next) => {
   ) {
     return res.status(StatusCodes.BAD_REQUEST).render('auth/register', {
       pageTitle: 'register page',
-      error: 'All fields required',
+      errorMsg: 'All fields required',
+      errorObj:{
+        phone: '',
+        email: '',
+        username: ''
+      },
       firstname,
       lastname,
       username,
@@ -62,11 +69,16 @@ const registerPost = async (req, res, next) => {
   if (userExists) {
     return res.status(StatusCodes.BAD_REQUEST).render('auth/register', {
       pageTitle: 'register page',
-      error: `${
+      errorMsg: `${
         userExists.email === email
           ? 'Email already in use'
-          : 'Username in already in use'
+          : 'Username already in use'
       }`,
+      errorObj:{
+        phone: userExists.phone === phone ? 'Phone already in use' : '',
+        email: userExists.email === email.toLowerCase() ? 'Email already in use' : '',
+        username: userExists.username === username.toLowerCase() ? 'Username already in use' : '',
+      },
       firstname,
       lastname,
       username,

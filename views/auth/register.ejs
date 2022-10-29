@@ -1,12 +1,11 @@
 <%- include('../layouts/authHeader.ejs') -%>
 <main class="register">
-
   <form class="form p-2 flex flex-col" method="post">
     <a href="/" class="form__logo">
       <img src="/static/images/logo-blue.png" alt="tweeter logo small">
     </a>
     <p class="form__title">Join Twitter today</p>
-    <p style="color: black"><%= error %></p>
+    <p style="color: black"><%= errorMsg %></p>
     <div class="handle-form">
       <div class="form__group">
         <label for="firstname">
@@ -48,7 +47,7 @@
           check_circle
         </span>
       </div>
-      <p>errorMsg goes here</p>
+      <p>errorMsg goes here  <%= errorObj?.username %></p>
     </div>
     <div class="handle-form">
       <div class="form__group">

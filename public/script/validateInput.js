@@ -41,7 +41,7 @@ const validateEmail = (el) => {
 };
 
 const validatePassword = (el) => {
-  const pattern = /(^[a-zA-Z0-9]{8,}[a-zA-Z]$)/;
+  const pattern = /(^[a-zA-Z0-9]{3,}[a-zA-Z]$)/;
   return isPassed(pattern, el, 'Enter at least 8 characters.');
 };
 

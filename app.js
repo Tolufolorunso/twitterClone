@@ -50,7 +50,7 @@ app.get('/', requireLogin, (req, res, next) => {
 
 app.use('/auth', authRouter);
 
-const PORT = 3003;
+const PORT =process.env.PORT || 3003;
 
 const start = async () => {
   try {

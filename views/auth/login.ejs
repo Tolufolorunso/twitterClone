@@ -6,6 +6,7 @@
         <img src="/static/images/logo-blue.png" alt="tweeter logo small">
       </a>
       <p class="form__title">Sign in to Twitter</p>
+      <div class="handle-form">
       <div class="form__group">
         <label for="loguser">
           <span class="material-symbols-outlined">
@@ -13,7 +14,13 @@
           </span>
         </label>
         <input type="text" name="logUser" id="loguser" placeholder="Login with email or phone or username" class="form__group--input" required>
+        <span class="material-symbols-outlined marked">
+          check_circle
+        </span>
       </div>
+      <p>errorMsg goes here</p>
+    </div>
+    <div class="handle-form">
       <div class="form__group">
         <label for="password">
           <span class="material-symbols-outlined">
@@ -21,7 +28,12 @@
           </span>
         </label>
         <input type="password" name="password" id="password" class="form__group--input" placeholder="Enter you password" autocomplete="off" required>
+        <span class="material-symbols-outlined marked">
+          check_circle
+        </span>
       </div>
+      <p>errorMsg goes here</p>
+    </div>
       <button type="submit" class="btn | login-btn not-allowed" disabled>Login</button>
 
       <div class="social-icons">

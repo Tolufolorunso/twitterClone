@@ -1,10 +1,10 @@
 const inputs = $('.form__group--input', true);
 let password;
-
 let isFirstnameValid,
   isLastnameValid,
   isPasswordValid,
   isUsernameValid,
+  isEmailValid,
   isConfirmPasswordValid;
 
 const submitForm = () => {
@@ -14,7 +14,7 @@ const submitForm = () => {
     isFirstnameValid &&
     isLastnameValid &&
     isUsernameValid &&
-    isPasswordValid &&
+    isPasswordValid && isEmailValid &&
     isConfirmPasswordValid
   ) {
     registerBtn.classList.remove('not-allowed');
@@ -28,7 +28,6 @@ const submitForm = () => {
 const validateInputs = (event) => {
   if (event.target.name === 'firstname') {
     isFirstnameValid = validateText(event.target);
-    console.log(isFirstnameValid);
   }
 
   if (event.target.name === 'lastname') {
@@ -40,7 +39,7 @@ const validateInputs = (event) => {
   }
 
   if (event.target.name === 'email') {
-    isUsernameValid = validateEmail(event.target);
+    isEmailValid = validateEmail(event.target);
   }
 
   if (event.target.name === 'password') {
@@ -57,3 +56,16 @@ const validateInputs = (event) => {
 inputs.forEach((input) => {
   input.addEventListener('keyup', validateInputs);
 });
+
+const startValidate = () => {
+  const form = document.querySelector('.form')
+if(form.username.value || form.email.value){
+   isFirstnameValid = validateText(form.firstname)
+  isLastnameValid = validateText(form.lastname)
+  isUsernameValid = validateUsername(form.username)
+  isEmailValid = validateEmail(form.email)
+}
+ 
+}
+
+startValidate()
