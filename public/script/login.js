@@ -15,14 +15,13 @@ const loginUser = () => {
 };
 
 const validateInputs = (event) => {
-  if (event.target.name === 'logUser') {
-    isLogUserValid = validateUser(event.target.value);
+  if (event.target.name === 'loguser') {
+    isLogUserValid = event.target.value !== '';
   }
 
   if (event.target.name === 'password') {
-    isPasswordValid = validatePassword(event.target.value);
+    isPasswordValid =  event.target.value !== '';
   }
-
   loginUser();
 };
 
