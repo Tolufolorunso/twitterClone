@@ -1,0 +1,71 @@
+.nav {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 2.2rem;
+        padding-left: 1rem;
+        padding-right: 1.5rem;
+    }
+
+    &__logo {
+        width: 41.52px;
+        height: 42px;
+
+        img {
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &__lists {
+        display: flex;
+        flex-direction: column;
+        gap: 0.6rem;
+
+        a {
+            padding-block: 0.8rem;
+            display: inline-block;
+            color: $clrOffBlack;
+            font-size: $fs-3;
+            font-weight: 600;
+            display: flex;
+            justify-items: center;
+            align-items: center;
+            gap: 0.5rem;
+        }
+    }
+
+    &__profile {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        position: fixed;
+        bottom: 1rem;
+
+        &-img {
+            width: 48px;
+            height: 48px;
+            border-radius: 100%;
+
+            img {
+                border: $border-1;
+                border-radius: 100%;
+            }
+        }
+
+        p {
+            line-height: 1;
+            span {
+                display: block;
+            }
+        }
+        span {
+            margin-left: auto;
+        }
+    }
+}
+

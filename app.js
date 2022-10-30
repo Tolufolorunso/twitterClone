@@ -45,7 +45,7 @@ app.get('/', requireLogin, (req, res, next) => {
   const payload = {
     pageTitle: 'Welcome Home',
   };
-  res.status(200).render('home', payload);
+  res.status(200).render('tweet/home', payload);
 });
 
 app.use('/auth', authRouter);

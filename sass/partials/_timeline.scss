@@ -1,0 +1,33 @@
+.timeline {
+    border-inline: $border-1;
+
+    &__nav {
+        padding: 1.6rem 1.4rem;
+        box-shadow: 0px 1px 0px #EBEEF0;
+        position: sticky;
+        top: 0;
+        background-color: rgba(255, 255, 255, 0.3);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+
+        h1 {
+            font-size: $fs-3;
+            font-weight: 900;
+            color: $clrOffBlack;
+        }
+    }
+
+    &__tweetPost {
+        display: flex;
+        align-items: flex-start;
+        padding: 1.6rem 1.4rem;
+
+
+
+        &--img {
+            width: 48px;
+            height: 48px;
+            border-radius: 100%;
+        }
+    }
+}

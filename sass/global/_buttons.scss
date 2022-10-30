@@ -16,9 +16,17 @@
   background-color: $clrWhite;
 }
 
-.register-btn .btn {
+.register-btn .btn,
+.timeline-btn-tweet {
   background-color: $clrPrimary;
   color: $clrWhite;
+  text-transform: capitalize;
+  cursor: pointer;
+  transition: all .3s ease;
+
+  &:hover {
+    opacity: 0.8;
+}
 }
 
 .login-btn .btn {

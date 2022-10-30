@@ -1,0 +1,15 @@
+.home {
+    min-height: 100%;
+    background-color: $clrWhite;
+
+    &__content {
+        display: grid;
+        grid-template-columns: 1fr 50% 1fr;
+        position: relative;
+    }
+}
+
+
+@import '../partials/nav';
+@import '../partials/timeline';
+@import '../partials/aside';
