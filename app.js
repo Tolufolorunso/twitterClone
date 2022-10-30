@@ -42,15 +42,19 @@ app.use('/static', express.static(path.join(__dirname, 'public')));
 
 // Routes
 app.get('/', requireLogin, (req, res, next) => {
+  res.status(200).redirect('/home');
+});
+
+app.get('/home', requireLogin, (req, res, next) => {
   const payload = {
     pageTitle: 'Welcome Home',
   };
-  res.status(200).render('tweet/home', payload);
+  res.status(200).render('home/home', payload);
 });
 
 app.use('/auth', authRouter);
 
-const PORT =process.env.PORT || 3003;
+const PORT = process.env.PORT || 3003;
 
 const start = async () => {
   try {

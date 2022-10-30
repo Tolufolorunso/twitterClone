@@ -3,6 +3,7 @@ $clrPrimary-light: #40aef2cb;
 $clrPrimary-dark: #055586;
 $clrBlack: #000;
 $clrWhite: #fff;
+$clrOffWhite: #EBEEF0;
 $clrOffBlack: #0F1419;
 
 $fs-1: 1.3rem;
@@ -13,3 +14,4 @@ $ff-body: 'Noto Sans', sans-serif;
 $ff-heading: 'Poppins', sans-serif;
 
 $border-1: 1px solid rgba(0, 0, 0, 0.3);
+$transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
