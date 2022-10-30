@@ -2,6 +2,7 @@
     position: sticky;
     top: 0;
     height: 100vh;
+    overflow: auto;
 
     &__wrapper {
         display: flex;
@@ -36,6 +37,12 @@
             justify-items: center;
             align-items: center;
             gap: 0.5rem;
+            width: 100%;
+
+            .material-symbols-outlined {
+                font-size: 3rem;
+                font-weight: 900;
+            }
         }
     }
 
@@ -59,13 +66,60 @@
 
         p {
             line-height: 1;
+
             span {
                 display: block;
             }
         }
+
         span {
             margin-left: auto;
         }
     }
+
+  
+
+    &__post-btn {
+        width: 100%;
+
+        .timeline-btn-tweet {
+            width: 100%;
+        }
+
+        div {
+            display: none;
+        }
+    }
 }
 
+
+@media (max-width: 1100px) {
+
+    .nav {
+        text-align: center;
+
+        &__wrapper {
+            justify-content: center;
+            align-items: center;
+        }
+
+        &__profile {
+            p {
+                display: none;
+            }
+            span {
+                display: none;
+            }
+        }
+    }
+    
+    .link-text {
+        display: none;
+    }
+
+    .timeline-btn-tweet {
+        display: none !important;
+    }
+
+    
+}
