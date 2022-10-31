@@ -2,7 +2,6 @@
     border-inline: $border-1;
 
     &__nav {
-        padding: 1rem 1.4rem;
         // box-shadow: 0px 1px 0px #EBEEF0;
         position: sticky;
         overflow: auto;
@@ -26,17 +25,84 @@
         }
     }
 
+    &__section {
+        padding: 2rem;
+    }
+
     &__tweetPost {
         display: flex;
-        align-items: flex-start;
-        padding: 1.6rem 1.4rem;
+        gap: 2rem;
+
+        &--post {
+            flex: 1;
+
+            textarea {
+                resize: none;
+                width: 100%;
+                border: none;
+                outline: none;
+            }
+        }
+
+        &--everyone {
+            display: flex;
+            align-items: center;
+            color: $clrPrimary;
+            padding: 0.2rem 0.7rem;
+            border-radius: 2rem;
+            border: none;
+            outline: none;
+            transition: $transition;
+            background-color: transparent;
+            cursor: pointer;
+
+            &:hover {
+                background-color: rgba($color: $clrPrimary, $alpha: 0.2);
+            }
+        }
+
+        &--media {
+            color: $clrPrimary;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+
+            input {
+                display: none;
+            }
+
+            button {
+                background-color: rgba($color: $clrPrimary, $alpha: 0.85);
+                padding-block: .7rem;
+                margin-left: auto;
+                color: $clrWhite;
+                cursor: pointer;
+                transition: $transition;
+
+                &:hover {
+                    background-color: rgba($color: $clrPrimary, $alpha: 1); 
+                }
+
+                &:disabled {
+                    background-color: rgba($color: $clrPrimary, $alpha: 0.5);
+                    cursor: initial;
+                }
+            }
 
 
 
-        &--img {
-            width: 48px;
-            height: 48px;
-            border-radius: 100%;
+            .material-symbols-outlined {
+                background-color: transparent;
+                border-radius: 100%;
+                padding: 10px;
+                font-size: 20px;
+                transition: $transition;
+                cursor: pointer;
+
+                &:hover {
+                    background-color: rgba($color: $clrPrimary, $alpha: 0.2);
+                }
+            }
         }
     }
 }
@@ -51,4 +117,12 @@
             }
         }
     }
+}
+
+.border {
+    height: 0.1px;
+    background-color: rgba(0, 0, 0, 0.1);
+    width: 100%;
+    margin-bottom: 1rem;
+    margin-top: 2rem;
 }

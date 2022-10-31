@@ -9,7 +9,8 @@ const session = require('express-session');
 const connectDB = require('./configs/connectDb');
 
 const { requireLogin } = require('./middleware');
-const authRouter = require('./routes/auth/auth.route');
+const authRouter = require('./routes/auth/auth.routes');
+const tweetRouter = require('./routes/tweet/tweet.routes');
 
 const app = express();
 
@@ -53,6 +54,7 @@ app.get('/home', requireLogin, (req, res, next) => {
 });
 
 app.use('/auth', authRouter);
+app.use('/api/tweets', tweetRouter);
 
 const PORT = process.env.PORT || 3003;
 

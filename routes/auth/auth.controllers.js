@@ -1,5 +1,4 @@
 const { StatusCodes } = require('http-status-codes');
-const { findOne } = require('../../models/User.model');
 const User = require('../../models/User.model');
 
 const landingPage = (req, res) => {

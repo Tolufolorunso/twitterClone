@@ -5,7 +5,7 @@ const {
   registerPost,
   landingPage,
   loginPost,
-} = require('./auth.controller');
+} = require('./auth.controllers');
 
 const authRouter = express.Router();
 

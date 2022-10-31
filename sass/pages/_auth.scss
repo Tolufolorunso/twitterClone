@@ -118,6 +118,15 @@ img {
   }
 }
 
+.eye {
+  padding-right: 0.5rem;
+  cursor: pointer;
+}
+
+.eye-open {
+  display: none
+}
+
 @import '../global/form';
 
 @media (max-width: 37rem) {

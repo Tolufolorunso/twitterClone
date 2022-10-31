@@ -1,9 +1,11 @@
 .aside {
     width: 100%;
+    padding-left: 2rem;
 
     &__nav {
         // padding: 1rem 1.4rem;
-        padding: 0.4rem 1rem;
+        // padding: 0.4rem 1rem;
+        padding-top: .3rem;
         // box-shadow: 0px 1px 0px #EBEEF0;
         position: sticky;
         overflow: auto;
@@ -20,6 +22,9 @@
         background: $clrOffWhite;
         padding: 1rem;
         border-radius: 2rem;
+        border: $border-1;
+        border-color: transparent;
+        transition: $transition;
 
 
         input {
@@ -30,8 +35,16 @@
             width: 100%;
         }
 
-        input:focus .aside__search__search {
-            background-color: white;
-        }
+
     }
+}
+
+.aside__search:focus-within {
+    background-color: white;
+    border: $border-1;
+    border-color: $clrPrimary;
+}
+
+.aside__search:focus-within .material-symbols-outlined {
+    color: $clrPrimary;
 }
