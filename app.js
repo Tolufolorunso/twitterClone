@@ -14,13 +14,13 @@ const tweetRouter = require('./routes/tweet/tweet.routes');
 
 const app = express();
 
-app.set('trust proxy', 1); // trust first proxy
+// app.set('trust proxy', 1); // trust first proxy
 app.use(
   session({
-    secret: process.env.SESSION_SECRET,
+    secret: 'secret',
     resave: true,
     saveUninitialized: false,
-    cookie: { secure: true },
+    // cookie: { secure: true },
   })
 );
 

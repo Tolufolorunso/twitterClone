@@ -89,31 +89,30 @@ const registerPost = async (req, res, next) => {
 
   const user = await User.create({ ...req.body });
   req.session.user = user;
-
   res.status(201).redirect('/');
 };
 
 const loginPost = async (req, res, next) => {
-  const { logUser, password } = req.body;
-  console.log(logUser, password);
-  if (!logUser || !password) {
+  const { loguser, password } = req.body;
+  console.log(loguser, password);
+  if (!loguser || !password) {
     return res.status(StatusCodes.BAD_REQUEST).render('auth/login', {
       pageTitle: 'register page',
       error: 'All fields required',
-      logUser,
+      loguser,
       password,
     });
   }
 
   const user = await User.findOne({
-    $or: [{ username: logUser }, { email: logUser }, { phone: logUser }],
+    $or: [{ username: loguser }, { email: loguser }, { phone: loguser }],
   }).select('+password');
 
   if (!user) {
     return res.status(StatusCodes.BAD_REQUEST).render('auth/login', {
       pageTitle: 'register page',
       error: 'Invalid credentials',
-      logUser,
+      loguser,
       password,
     });
   }
@@ -123,14 +122,14 @@ const loginPost = async (req, res, next) => {
     return res.status(StatusCodes.BAD_REQUEST).render('auth/login', {
       pageTitle: 'register page',
       error: 'Invalid credentials',
-      logUser,
+      loguser,
       password,
     });
   }
+  console.log(user)
 
   req.session.user = user;
-
-  res.status(201).redirect('/');
+  res.status(200).redirect('/');
 };
 
 module.exports = {

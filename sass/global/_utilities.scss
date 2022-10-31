@@ -51,3 +51,13 @@ $spacing: (1, 2, 3, 4, 5, 6, 7);
   justify-content: center;
   align-items: center;
 }
+
+
+$gaps: (1, 2, 3, 4, 5, 6, 7);
+
+@each $gap in $gaps {
+  .gap-#{$gap} {
+    gap: #{$gap}rem;
+  }
+}
+

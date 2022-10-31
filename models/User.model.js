@@ -55,6 +55,7 @@ const UserSchema = new mongoose.Schema(
     dateOfBirth: {
       type: Date,
     },
+    likes: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Tweet' }],
     followers: {
       type: Array,
       default: [],

@@ -80,7 +80,7 @@
                 transition: $transition;
 
                 &:hover {
-                    background-color: rgba($color: $clrPrimary, $alpha: 1); 
+                    background-color: rgba($color: $clrPrimary, $alpha: 1);
                 }
 
                 &:disabled {
@@ -105,6 +105,50 @@
             }
         }
     }
+
+    &__tweets {
+        margin-top: 1rem;
+
+        &:last-child {
+            border-bottom: $border-1;
+            border-color: rgba(0, 0, 0, 0.1);
+        }
+    }
+
+    &__tweet {
+        background-color: $clrWhite;
+        border-top: $border-1;
+        border-color: rgba(0, 0, 0, 0.1);
+
+
+        &--content {
+
+            &-detail {
+                gap: 0.5rem;
+            }
+
+            &-dot {
+                align-self: flex-start;
+            }
+
+            &-more {
+                margin-left: auto;
+            }
+
+            &-actions {
+                justify-content: space-between;
+                padding: 2rem 3rem 0.5rem 0;
+            }
+
+            &-name {
+                text-transform: capitalize;
+            }
+            .like,.comment,.retweet,.share {
+                cursor: pointer;
+            }
+        }
+    }
+
 }
 
 @media (max-width: 500px) {
