@@ -145,6 +145,11 @@
             }
             .like,.comment,.retweet,.share {
                 cursor: pointer;
+                display: flex;
+                align-items: center;
+                span {
+                    pointer-events: none;
+                }
             }
         }
     }

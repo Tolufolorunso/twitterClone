@@ -2,13 +2,15 @@
 
 
 const likeTweet = async (e) => {
-    if (e.target.classList.contains('likeBtn')) {
-        let tweetId = getTweetId(e.target)
+    if (e.target.classList.contains('like')) {
+        let button = e.target
+        let tweetId = getTweetId(button)
 
         if (!tweetId) return alert('no tweet id')
         try {
             const response = await fetch(`/api/tweets/${tweetId}/likes`, { method: 'PATCH' })
             const result = await response.json()
+            button.querySelector('.number').textContent = result.tweet.likes.length || ''
         } catch (error) {
             console.log(error)
         }

@@ -39,7 +39,7 @@ const outPutTweets = (data, container) => {
     <span>Nothing to show here</span>
     `
 
-    if(data.length === 0) {
+    if (data.length === 0) {
         container.insertAdjacentHTML('afterbegin', html)
     }
 }
@@ -67,7 +67,8 @@ const postTweet = async () => {
 }
 
 const generateTweetHtml = (data) => {
-    let { postedBy, tweetImg, tweetText, createdAt, _id } = data
+    console.log(data)
+    let { postedBy, tweetImg, tweetText, createdAt, _id, likes } = data
     userImage = !postedBy.userImg ? postedBy.userImg : "/static/images/logo-blue.png"
     return `
             <div class="timeline__tweet px-2 py-1 flex gap-1" data-id="${_id}">
@@ -99,14 +100,15 @@ const generateTweetHtml = (data) => {
                 </span>
                 </div>
                 <div class="like">
-                <span class="material-symbols-outlined likeBtn">
-                    favorite
-                </span>
+                    <span class="material-symbols-outlined likeBtn">
+                        favorite
+                    </span>
+                    <span class="number">${likes.length || ''}</span>
                 </div>
                 <div class="share">
-                <span class="material-symbols-outlined">
-                    upload
-                </span>
+                    <span class="material-symbols-outlined">
+                        upload
+                    </span>
                 </div>
             </div>
             </div>

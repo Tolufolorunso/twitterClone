@@ -1,4 +1,6 @@
 const { StatusCodes } = require('http-status-codes');
+const jwt = require('jsonwebtoken');
+
 const User = require('../../models/User.model');
 
 const landingPage = (req, res) => {
@@ -88,6 +90,14 @@ const registerPost = async (req, res, next) => {
   }
 
   const user = await User.create({ ...req.body });
+
+  const token = createJWT({
+    name: user.name,
+    firstname: user.firstname,
+    lastname: user.lastname,
+    id: user._id,
+  });
+
   req.session.user = user;
   res.status(201).redirect('/');
 };

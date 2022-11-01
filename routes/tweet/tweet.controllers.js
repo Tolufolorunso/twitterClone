@@ -2,7 +2,7 @@ const { StatusCodes } = require('http-status-codes');
 const Tweet = require('../../models/Tweet.model');
 const User = require('../../models/User.model');
 
-const getTweets = async (req,res) => {
+const getTweets = async (req, res) => {
     try {
         const tweets = await Tweet.find({}).populate('postedBy')
 
@@ -31,7 +31,7 @@ const postTweet = async (req, res) => {
 
     try {
         let tweet = await Tweet.create(tweetData);
-        tweet = await User.populate(tweet,{path: 'postedBy'})
+        tweet = await User.populate(tweet, { path: 'postedBy' })
         res.status(StatusCodes.CREATED).json({
             status: true,
             message: 'tweet successful',
@@ -44,13 +44,33 @@ const postTweet = async (req, res) => {
     }
 }
 
-const likeTweet = async (req,res) => {
+const likeTweet = async (req, res) => {
     let tweetId = req.params.tweetId
     let userId = req.session.user._id
 
     const isLiked = req.session.user.likes && req.session.user.likes.includes(tweetId)
-    console.log(isLiked)
-    res.json(req.params)
+
+    const option = isLiked ? '$pull' : '$addToSet'
+
+    try {
+
+        req.session.user = await User.findByIdAndUpdate(userId, {
+            [option]: { likes: tweetId }
+        }, { new: true })
+
+        const tweet = await Tweet.findByIdAndUpdate(tweetId, {
+            [option]: { likes: userId }
+        }, { new: true })
+
+        res.json({
+            status: true,
+            message: 'success',
+            tweet
+        })
+    } catch (error) {
+        res.sendStatus(400)
+    }
+
 }
 
-module.exports = { getTweets,postTweet,likeTweet }
+module.exports = { getTweets, postTweet, likeTweet }
