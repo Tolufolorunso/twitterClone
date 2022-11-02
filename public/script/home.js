@@ -21,6 +21,7 @@ const getTweets = async () => {
     try {
         const response = await fetch('/api/tweets')
         const result = await response.json()
+        console.log(result)
         const { tweets } = result
         outPutTweets(tweets, $('.timeline__tweets'))
     } catch (error) {
@@ -77,7 +78,7 @@ const generateTweetHtml = (data) => {
             </div>
             <div class="timeline__tweet--content flex flex-col">
             <div class="timeline__tweet--content-detail flex">
-                <p class="timeline__tweet--content-name">${postedBy.firstname} ${postedBy.lastname}</p>
+                <p class="timeline__tweet--content-name">${postedBy.fullname}</p>
                 <p class="timeline__tweet--content-username">@${postedBy.username}</p>
                 <p class="timeline__tweet--content-time"><span class="timeline__tweet--content-dot">.</span> ${timeDifference(new Date(), new Date(createdAt))}</p>
                 <span class="material-symbols-outlined timeline__tweet--content-more">

@@ -50,6 +50,7 @@
             gap: 1rem;
             width: 100%;
 
+
             .material-symbols-outlined {
                 font-size: 3rem;
                 font-weight: 900;
@@ -123,6 +124,22 @@
                 display: none;
             }
         }
+
+        &__lists {
+            a {
+            gap: 5px;
+
+                .material-symbols-outlined {
+                    border-radius: 100%;
+                    background: transparent;
+                    padding: 7px;
+
+                    &:hover {
+                        background-color: rgba($color: $clrBlack, $alpha: 0.2);
+                    }
+                }
+            }
+        }
     }
 
     .link-text {
@@ -142,7 +159,7 @@
         background-color: $clrPrimary;
     }
 
-    .nav__post-btn-svg svg { 
+    .nav__post-btn-svg svg {
         color: $clrWhite !important;
     }
 

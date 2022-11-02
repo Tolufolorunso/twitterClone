@@ -6,11 +6,16 @@ const sass = require('sass');
 const morgan = require('morgan');
 const session = require('express-session');
 
+const passport = require('passport');
+const LocalStrategy = require('passport-local').Strategy;
+
 const connectDB = require('./configs/connectDb');
 
 const { requireLogin } = require('./middleware');
 const authRouter = require('./routes/auth/auth.routes');
 const tweetRouter = require('./routes/tweet/tweet.routes');
+
+
 
 const app = express();
 
@@ -18,11 +23,20 @@ const app = express();
 app.use(
   session({
     secret: 'secret',
-    resave: true,
+    resave: false, 
     saveUninitialized: false,
     // cookie: { secure: true },
   })
 );
+
+app.use(passport.initialize());
+app.use(passport.session());
+
+// passport config
+const User = require('./models/User.model')
+passport.use(new LocalStrategy(User.authenticate()));
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
 
 let DB;
 

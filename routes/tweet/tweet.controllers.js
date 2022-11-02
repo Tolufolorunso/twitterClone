@@ -26,7 +26,7 @@ const postTweet = async (req, res) => {
     const tweetData = {
         tweetText: req.body.tweet || '',
         tweetImg: req.file?.filename || '',
-        postedBy: req.session.user
+        postedBy: req.user._id
     }
 
     try {
@@ -46,7 +46,7 @@ const postTweet = async (req, res) => {
 
 const likeTweet = async (req, res) => {
     let tweetId = req.params.tweetId
-    let userId = req.session.user._id
+    let userId = req.user._id
 
     const isLiked = req.session.user.likes && req.session.user.likes.includes(tweetId)
 

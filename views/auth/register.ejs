@@ -8,32 +8,17 @@
     <p style="color: black"><%= errorMsg %></p>
     <div class="handle-form">
       <div class="form__group">
-        <label for="firstname">
+        <label for="fullname">
           <span class="material-symbols-outlined">
-            person
+            person_2
           </span>
         </label>
-        <input type="text" name="firstname" id="firstname" placeholder="Enter firstname" class="form__group--input" value="<%= firstname %>" required />
+        <input type="text" name="fullname" id="fullname" placeholder="Enter fullname" class="form__group--input" value="<%= fullname %>" required>
         <span class="material-symbols-outlined marked">
           check_circle
         </span>
       </div>
-      <p>errorMsg goes here</p>
-    </div>
-
-    <div class="handle-form">
-      <div class="form__group">
-        <label for="lastname">
-          <span class="material-symbols-outlined">
-            person
-          </span>
-        </label>
-        <input type="text" name="lastname" id="lastname" placeholder="Enter lastname" class="form__group--input" value="<%= lastname %>" required>
-        <span class="material-symbols-outlined marked">
-          check_circle
-        </span>
-      </div>
-      <p>errorMsg goes here</p>
+      <p>errorMsg goes here  <%= errorObj?.fullname %></p>
     </div>
     <div class="handle-form">
       <div class="form__group">

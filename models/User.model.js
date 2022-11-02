@@ -1,20 +1,12 @@
 const mongoose = require('mongoose');
 // const validator = require('validator');
 const bcrypt = require('bcryptjs');
+const passportLocalMongoose = require('passport-local-mongoose')
 
 const UserSchema = new mongoose.Schema(
   {
-    firstname: {
+    fullname: {
       type: String,
-      required: [true, 'Name required'],
-      minlength: 3,
-      maxlength: 100,
-      trim: true,
-      lowercase: true,
-    },
-    lastname: {
-      type: String,
-      required: [true, 'Name required'],
       minlength: 3,
       maxlength: 100,
       trim: true,
@@ -45,12 +37,6 @@ const UserSchema = new mongoose.Schema(
       //   message: (props) => `${props.value} is not a valid phone!`,
       // },
       default: '00000',
-    },
-    password: {
-      type: String,
-      required: [true, 'Password required'],
-      minlength: 3,
-      select: false,
     },
     dateOfBirth: {
       type: Date,
@@ -88,18 +74,21 @@ const UserSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-UserSchema.pre('save', async function (next) {
-  if (!this.isModified('password')) {
-    return next();
-  }
 
-  const salt = await bcrypt.genSalt(10);
-  this.password = await bcrypt.hash(this.password, salt);
-  next();
-});
+UserSchema.plugin(passportLocalMongoose)
 
-UserSchema.methods.comparePassword = async function (candiatePassword) {
-  return await bcrypt.compare(candiatePassword, this.password);
-};
+// UserSchema.pre('save', async function (next) {
+//   if (!this.isModified('password')) {
+//     return next();
+//   }
+
+//   const salt = await bcrypt.genSalt(10);
+//   this.password = await bcrypt.hash(this.password, salt);
+//   next();
+// });
+
+// UserSchema.methods.comparePassword = async function (candiatePassword) {
+//   return await bcrypt.compare(candiatePassword, this.password);
+// };
 
 module.exports = mongoose.model('User', UserSchema);
