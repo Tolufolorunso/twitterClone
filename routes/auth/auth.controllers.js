@@ -27,12 +27,9 @@ const register = (req, res, next) => {
       email: "",
       username: "",
     },
-    firstname: "",
-    lastname: "",
+    fullname: "",
     username: "",
     email: "",
-    password: "",
-    confirmPassword: "",
   };
   res.status(200).render("auth/register", payload);
 };

@@ -5,7 +5,7 @@ const User = require('../../models/User.model');
 const getTweets = async (req, res) => {
     try {
         const tweets = await Tweet.find({}).populate('postedBy')
-
+console.log(tweets)
         res.status(StatusCodes.OK).json({
             status: true,
             result: 9,
@@ -48,13 +48,13 @@ const likeTweet = async (req, res) => {
     let tweetId = req.params.tweetId
     let userId = req.user._id
 
-    const isLiked = req.session.user.likes && req.session.user.likes.includes(tweetId)
+    const isLiked = req.user.likes && req.user.likes.includes(tweetId)
 
     const option = isLiked ? '$pull' : '$addToSet'
 
     try {
 
-        req.session.user = await User.findByIdAndUpdate(userId, {
+        req.user = await User.findByIdAndUpdate(userId, {
             [option]: { likes: tweetId }
         }, { new: true })
 
